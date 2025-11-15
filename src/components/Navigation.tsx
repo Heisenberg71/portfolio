@@ -17,6 +17,7 @@ const Navigation = () => {
     { label: "About", href: "#about" },
     { label: "Publications", href: "#publications" },
     { label: "News", href: "#news" },
+    { label: "Resume", href: "#resume" },
     { label: "Skills", href: "#skills" },
     { label: "Work", href: "#work" },
     { label: "Gallery", href: "#gallery" },
