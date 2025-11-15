@@ -70,32 +70,32 @@ const WorkProjects = () => {
   ];
 
   return (
-    <section id="work" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Work & Projects</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+    <section id="work" className="section-padding bg-secondary/30">
+      <div className="container-custom">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="section-title">Work & Projects</h2>
+          <div className="title-underline"></div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 animate-slide-in-right">
           {projects.map((project, index) => (
-            <Card key={index} className="hover-lift transition-all hover:shadow-lg">
+            <Card key={index} className="hover-lift group border-l-4 border-l-transparent hover:border-l-primary transition-all">
               <CardHeader>
-                <CardTitle className="text-xl mb-2 flex items-start justify-between gap-2">
-                  <span>{project.title}</span>
-                  <ExternalLink className="w-4 h-4 flex-shrink-0 mt-1 text-muted-foreground" />
+                <CardTitle className="text-lg mb-3 flex items-start justify-between gap-2">
+                  <span className="font-bold">{project.title}</span>
+                  <ExternalLink className="w-4 h-4 flex-shrink-0 mt-1 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                 </CardTitle>
-                <CardDescription className="text-sm leading-relaxed">
+                <CardDescription className="text-sm leading-relaxed line-clamp-4">
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-xs text-muted-foreground">
-                  <strong>Source:</strong> {project.source}
+              <CardContent className="space-y-4">
+                <p className="text-xs text-muted-foreground font-medium">
+                  <span className="text-foreground">Source:</span> {project.source}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="outline" className="text-xs">
+                    <Badge key={tagIndex} variant="secondary" className="text-xs font-medium">
                       {tag}
                     </Badge>
                   ))}

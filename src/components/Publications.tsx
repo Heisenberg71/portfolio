@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 
 const Publications = () => {
@@ -48,33 +49,35 @@ const Publications = () => {
   ];
 
   return (
-    <section id="publications" className="py-20 px-6 bg-secondary/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Selected Publications</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+    <section id="publications" className="section-padding">
+      <div className="container-custom">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="section-title">Selected Publications</h2>
+          <div className="title-underline"></div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 animate-slide-in-left">
           {publications.map((pub, index) => (
-            <Card key={index} className="hover-lift transition-all hover:shadow-lg">
+            <Card key={index} className="hover-lift group border-l-4 border-l-transparent hover:border-l-primary transition-all">
               <CardHeader>
-                <CardTitle className="text-xl leading-tight mb-2">
+                <CardTitle className="text-lg leading-tight mb-3">
                   <a
                     href={pub.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground hover:text-primary transition-colors flex items-start gap-2 group"
+                    className="text-foreground hover:text-primary transition-colors flex items-start gap-2"
                   >
-                    <span className="flex-1">{pub.title}</span>
-                    <ExternalLink className="w-5 h-5 flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="flex-1 line-clamp-3">{pub.title}</span>
+                    <ExternalLink className="w-4 h-4 flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </CardTitle>
-                <CardDescription className="text-sm">{pub.authors}</CardDescription>
+                <CardDescription className="text-sm leading-relaxed">{pub.authors}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-1">{pub.venue}</p>
-                <p className="text-xs text-muted-foreground">Publisher: {pub.publisher}</p>
+                <p className="text-sm text-muted-foreground mb-2 font-medium">{pub.venue}</p>
+                <Badge variant="outline" className="text-xs">
+                  {pub.publisher}
+                </Badge>
               </CardContent>
             </Card>
           ))}

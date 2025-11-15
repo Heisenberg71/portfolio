@@ -54,36 +54,53 @@ const Resume = () => {
     },
   ];
 
+  const skills = [
+    { name: "Python", level: 95 },
+    { name: "ReactJS", level: 97 },
+    { name: "PHP", level: 93 },
+    { name: "MySQL", level: 95 },
+    { name: "Java", level: 94 },
+    { name: "AngularJS", level: 80 },
+    { name: "HTML", level: 99 },
+    { name: "CSS", level: 99 },
+    { name: "Machine Learning", level: 92 },
+    { name: "Data Science & Visualization", level: 90 },
+    { name: "NLP & LLM Integration", level: 88 },
+    { name: "API Design & Integration", level: 91 },
+    { name: "Docker & Cloud Deployment", level: 85 },
+    { name: "Prompt Engineering & Generative AI Systems", level: 86 },
+  ];
+
   return (
-    <section id="resume" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">My Resume</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+    <section id="resume" className="section-padding bg-secondary/30">
+      <div className="container-custom">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="section-title">My Resume</h2>
+          <div className="title-underline"></div>
         </div>
 
         {/* Work Experience */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <Briefcase className="w-8 h-8 text-primary" />
+        <div className="mb-20 animate-slide-in-left">
+          <div className="flex items-center gap-3 mb-10">
+            <Briefcase className="w-7 h-7 text-primary" />
             <h3 className="text-3xl font-bold text-foreground">Work Experience</h3>
           </div>
           <div className="space-y-6">
             {workExperience.map((work, index) => (
-              <Card key={index} className="hover-lift transition-all hover:shadow-lg">
+              <Card key={index} className="hover-lift border-l-4 border-l-primary/50">
                 <CardHeader>
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <div className="flex-1">
-                      <CardTitle className="text-2xl mb-1">{work.title}</CardTitle>
-                      <CardDescription className="text-base">{work.organization}</CardDescription>
+                      <CardTitle className="text-xl mb-2">{work.title}</CardTitle>
+                      <CardDescription className="text-base font-medium">{work.organization}</CardDescription>
                     </div>
-                    <Badge variant="secondary" className="flex-shrink-0">
+                    <Badge variant="secondary" className="flex-shrink-0 font-medium">
                       {work.period}
                     </Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{work.description}</p>
+                  <p className="text-muted-foreground leading-relaxed text-sm">{work.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -91,31 +108,61 @@ const Resume = () => {
         </div>
 
         {/* Education */}
-        <div>
-          <div className="flex items-center gap-3 mb-8">
-            <GraduationCap className="w-8 h-8 text-primary" />
+        <div className="mb-20 animate-slide-in-right">
+          <div className="flex items-center gap-3 mb-10">
+            <GraduationCap className="w-7 h-7 text-primary" />
             <h3 className="text-3xl font-bold text-foreground">Education</h3>
           </div>
           <div className="space-y-6">
             {education.map((edu, index) => (
-              <Card key={index} className="hover-lift transition-all hover:shadow-lg">
+              <Card key={index} className="hover-lift border-l-4 border-l-primary/50">
                 <CardHeader>
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <div className="flex-1">
-                      <CardTitle className="text-2xl mb-1">{edu.degree}</CardTitle>
-                      <CardDescription className="text-base">{edu.institution}</CardDescription>
+                      <CardTitle className="text-xl mb-2">{edu.degree}</CardTitle>
+                      <CardDescription className="text-base font-medium">{edu.institution}</CardDescription>
                     </div>
-                    <Badge variant="secondary" className="flex-shrink-0">
+                    <Badge variant="secondary" className="flex-shrink-0 font-medium">
                       {edu.period}
                     </Badge>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <p className="text-muted-foreground leading-relaxed">{edu.description}</p>
+                  <p className="text-muted-foreground leading-relaxed text-sm">{edu.description}</p>
                   <div className="flex items-center gap-2">
-                    <Badge variant="outline" className="font-semibold">
+                    <Badge variant="outline" className="font-semibold text-primary border-primary">
                       CGPA: {edu.cgpa}
                     </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills */}
+        <div className="animate-fade-in">
+          <div className="flex items-center gap-3 mb-10">
+            <div className="w-7 h-7 flex items-center justify-center">
+              <div className="w-5 h-5 rounded bg-primary"></div>
+            </div>
+            <h3 className="text-3xl font-bold text-foreground">Skills</h3>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {skills.map((skill, index) => (
+              <Card key={index} className="hover-lift border-l-4 border-l-primary/30">
+                <CardContent className="pt-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-foreground font-semibold">{skill.name}</span>
+                    <Badge variant="secondary" className="font-bold">
+                      {skill.level}%
+                    </Badge>
+                  </div>
+                  <div className="w-full bg-secondary rounded-full h-2.5">
+                    <div
+                      className="bg-gradient-to-r from-primary to-primary/70 h-2.5 rounded-full transition-all duration-1000"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
                   </div>
                 </CardContent>
               </Card>
