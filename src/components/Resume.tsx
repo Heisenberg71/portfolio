@@ -1,6 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, GraduationCap, Database, Code2, Brain, Zap, Cloud, Sparkles, GitBranch, Boxes, FileText, BarChart3, Layers } from "lucide-react";
+import { FaPython, FaJava, FaHtml5, FaCss3Alt, FaDocker, FaGitAlt } from "react-icons/fa";
+import { SiMysql, SiPostgresql, SiMariadb, SiMongodb, SiRedis, SiSpringboot, SiApachekafka, SiGradle, SiJunit5, SiJenkins, SiC, SiCplusplus } from "react-icons/si";
 
 const Resume = () => {
   const workExperience = [
@@ -29,46 +31,49 @@ const Resume = () => {
 
   const education = [
     {
-      period: "2021 - 2026",
-      degree: "PhD in Computer Science",
-      institution: "University of Idaho, Moscow, Idaho, USA",
-      description:
-        "Pursuing a Doctor of Philosophy degree specializing in Bioinformatics, Human-Computer Interaction, Database Systems, and Machine Learning. Engaged in research focusing on AI-driven tools for biological and clinical data analysis, workflow optimization, and interactive visualization platforms. Developed advanced prototypes using Python, R, SQL, ReactJS, and cloud technologies while contributing to multiple publications and conference presentations.",
-      cgpa: "4.00 / 4.00",
-    },
-    {
-      period: "2014 - 2016",
-      degree: "Master in Computer Engineering",
-      institution: "Universitat Rovira I Virgili, Tarragona, Spain",
-      description:
-        "Completed a Master of Science degree with focus on Data Mining, Artificial Intelligence, and Software Engineering. Conducted research on machine learning models and web-based systems, gaining hands-on experience with Python, MATLAB, Java, and database systems. Published a thesis on intelligent systems and actively participated in academic workshops and seminars.",
-      cgpa: "7.91 / 10.00",
-    },
-    {
-      period: "2003 - 2008",
+      period: "2018 - 2023",
       degree: "B.Sc. in Computer Science and Engineering",
       institution: "Shahjalal University of Science and Technology, Sylhet, Bangladesh",
       description:
-        "Earned a Bachelor of Science degree, building a strong foundation in Software Development, Algorithms, Networking, and Database Management. Completed multiple projects in C, C++, Java, and MySQL, gaining practical experience in problem-solving, system design, and teamwork. Graduated with distinction and actively participated in coding competitions and technical clubs.",
-      cgpa: "3.64 / 4.00",
+        "Earned a Bachelor of Science degree, developing a strong foundation in Algorithms, Data Structures, and Engineering principles. Graduated with distinction while actively participating in competitive programming contests and contributing to various technical clubs.",
+      cgpa: "3.75 / 4.00",
     },
   ];
 
   const skills = [
-    { name: "Python", level: 95 },
-    { name: "ReactJS", level: 97 },
-    { name: "PHP", level: 93 },
-    { name: "MySQL", level: 95 },
-    { name: "Java", level: 94 },
-    { name: "AngularJS", level: 80 },
-    { name: "HTML", level: 99 },
-    { name: "CSS", level: 99 },
-    { name: "Machine Learning", level: 92 },
-    { name: "Data Science & Visualization", level: 90 },
-    { name: "NLP & LLM Integration", level: 88 },
-    { name: "API Design & Integration", level: 91 },
-    { name: "Docker & Cloud Deployment", level: 85 },
-    { name: "Prompt Engineering & Generative AI Systems", level: 86 },
+
+    // Programming Languages
+    { name: "C", icon: SiC },
+    { name: "C++", icon: SiCplusplus },
+    { name: "Java (OOP)", icon: FaJava },
+    { name: "Python", icon: FaPython },
+
+    // Databases
+    { name: "MySQL", icon: SiMysql },
+    { name: "PostgreSQL", icon: SiPostgresql },
+    { name: "MariaDB", icon: SiMariadb },
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "Redis", icon: SiRedis },
+
+    // NLP & AI
+    { name: "NLP", icon: Brain },
+    { name: "Deep Learning", icon: Brain },
+    { name: "LangChain", icon: Sparkles },
+    { name: "OpenAI APIs", icon: Cloud },
+    
+    // Tools & Technologies
+    { name: "SpringBoot", icon: SiSpringboot },
+    { name: "Gradle", icon: SiGradle },
+    { name: "Kafka", icon: SiApachekafka },
+    { name: "JUnit", icon: SiJunit5 },
+    { name: "Git", icon: FaGitAlt },
+    { name: "Microservice", icon: Boxes },
+    { name: "Test Driven Development (TDD)", icon: Code2 },
+    { name: "Jenkins", icon: SiJenkins },
+    { name: "Docker", icon: FaDocker },
+    { name: "Pabble Templates", icon: FileText },
+    { name: "Jasper Reports", icon: BarChart3 },
+    { name: "Design Patterns", icon: Layers },
   ];
 
   return (
@@ -143,19 +148,21 @@ const Resume = () => {
         {/* Skills */}
         <div className="animate-fade-in">
           <div className="flex items-center gap-3 mb-10">
-            <div className="w-7 h-7 flex items-center justify-center">
-              <div className="w-5 h-5 rounded bg-primary"></div>
-            </div>
+            <Code2 className="w-7 h-7 text-primary" />
             <h3 className="text-3xl font-bold text-foreground">Skills</h3>
           </div>
-          <div className="grid gap-3 md:grid-cols-3 lg:grid-cols-4">
-            {skills.map((skill, index) => (
-              <Card key={index} className="hover-lift border-l-4 border-l-primary/30">
-                <CardContent className="pt-4 pb-4">
-                  <span className="text-sm font-medium text-foreground">{skill.name}</span>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            {skills.map((skill, index) => {
+              const IconComponent = skill.icon;
+              return (
+                <Card key={index} className="hover-lift border-l-4 border-l-primary/30 transition-all duration-300">
+                  <CardContent className="pt-4 pb-4 flex flex-col items-center justify-center gap-2 text-center">
+                    <IconComponent className="w-6 h-6 text-primary" />
+                    <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>
