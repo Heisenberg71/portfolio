@@ -1,17 +1,15 @@
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FaGithub, FaLinkedin, FaGraduationCap } from "react-icons/fa";
+import { SiGooglescholar } from "react-icons/si";
 
 const Hero = () => {
   const socialLinks = [
-    { name: "GitHub", url: "https://github.com/utpoln" },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/kallol-naha-5a584631/" },
-    { name: "ResearchGate", url: "https://www.researchgate.net/profile/Kallol-Naha" },
-    { name: "Google Scholar", url: "https://scholar.google.com/citations?user=nzL0EKoAAAAJ&hl=en" },
-    { name: "Semantic Scholar", url: "https://www.semanticscholar.org/author/Kallol-Naha/112902836" },
-    { name: "DBLP", url: "https://dblp.org/pid/264/2536.html" },
-    { name: "ORCID", url: "https://orcid.org/0000-0002-1815-234X" },
+    { name: "GitHub", url: "https://github.com/Heisenberg71", icon: FaGithub },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/kallol-naha/", icon: FaLinkedin },
+    { name: "ResearchGate", url: "https://www.researchgate.net/profile/Kallol-Naha", icon: FaGraduationCap },
+    { name: "Google Scholar", url: "https://scholar.google.com/citations?user=nzL0EKoAAAAJ&hl=en", icon: SiGooglescholar },
   ];
-
   return (
     <section id="about" className="min-h-screen flex items-center justify-center section-padding pt-32">
       <div className="container-custom">
@@ -28,23 +26,22 @@ const Hero = () => {
           {/* Name and Title */}
           <div className="space-y-3">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground">
-              Kallol Naha <span className="text-muted-foreground text-3xl md:text-4xl">/ কল্লোল নাহা</span>
+              Samin Yasir
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-              Ph.D. Candidate & Graduate Research Assistant
+              Backend Engineer & Full-Stack Developer
             </p>
-            <p className="text-lg text-muted-foreground">University of Idaho</p>
           </div>
 
           {/* Contact Info */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-            <a href="tel:+12083104663" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href="tel:+8801793592020" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
-              <span>+1 (208) 310-4663</span>
+              <span>+88-01793592020</span>
             </a>
-            <a href="mailto:naha7197@vandals.uidaho.edu" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href="mailto:saminyasir.cs@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail className="w-4 h-4" />
-              <span>naha7197@vandals.uidaho.edu</span>
+              <span>saminyasir.cs@gmail.com</span>
             </a>
             <a href="https://kallolnaha.me" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
               <ExternalLink className="w-4 h-4" />
@@ -52,43 +49,41 @@ const Hero = () => {
             </a>
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              <span>Moscow, ID, USA</span>
+              <span>Dhaka, Bangladesh</span>
             </span>
           </div>
 
           {/* Social Links */}
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {socialLinks.map((link) => (
-              <Button
-                key={link.name}
-                variant="outline"
-                size="sm"
-                asChild
-                className="hover-lift"
-              >
-                <a href={link.url} target="_blank" rel="noopener noreferrer">
-                  {link.name}
-                </a>
-              </Button>
-            ))}
+            {socialLinks.map((link) => {
+              const IconComponent = link.icon;
+              return (
+                <Button
+                  key={link.name}
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="hover-lift"
+                >
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <IconComponent className="w-4 h-4" />
+                    <span>{link.name}</span>
+                  </a>
+                </Button>
+              );
+            })}
           </div>
 
           {/* Bio */}
           <div className="max-w-4xl space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Dedicated Ph.D. candidate at the University of Idaho specializing in{" "}
-              <span className="font-semibold text-foreground">
-                Bioinformatics, Human-Computer Interaction, Database Management, Machine Learning, and Large-Scale Web Software Development
-              </span>
-              , working under the guidance of <span className="font-semibold text-foreground">Prof. Dr. Hasan Jamil</span> in the SmartDB Lab.
+              Passionate <span className="font-semibold text-foreground">Backend Engineer</span> currently working as a full-time Backend engineer at <span className="font-semibold text-foreground">Kona Software Lab</span>. I am instrumental in building the <span className="font-semibold text-foreground">Token Service Provider (TSP) module</span> from scratch, adhering to <span className="font-semibold text-foreground">EMV (Euro-pay, Mastercard, Visa) specifications</span>. I have architected and developed critical backend systems including the <span className="font-semibold text-foreground">Token Life Cycle Management System, Issuer Callback Processing, Token Vault Creation System, Issuer On-boarding System, and TSP Reporting</span> modules. Additionally, I have authored comprehensive <span className="font-semibold text-foreground">unit test cases (UTC)</span> for the Kona Plate platform, ensuring code quality and reliability.
             </p>
             <p>
-              My research focuses on developing <span className="font-semibold text-foreground">AI-driven tools</span> to advance healthcare and environmental management by improving bioinformatics workflows and making complex biological and clinical data more accessible. I have previously developed commercial software solutions, intelligent systems for biologists, visual workflow platforms for scientists, and auto-grading tools for database education, all emphasizing intuitive, user-centered design.
+              Previously, I worked at <span className="font-semibold text-foreground">Samsung R&D Institute, Bangladesh</span>, where I contributed to the <span className="font-semibold text-foreground">Samsung Galaxy Smart Watch notification module</span>. My responsibilities encompassed writing unit tests, performing manual device testing, and collaborating on innovative features. I successfully passed the <span className="font-semibold text-foreground">Professional Test</span>, a globally recognized intensive coding assessment for Samsung Engineers, and mentored teammates to excel in this challenging evaluation.
             </p>
             <p>
-              I am a <span className="font-semibold text-foreground">Student Member of ACM and IEEE</span>, and an active committee member of the{" "}
-              <span className="font-semibold text-foreground">Bangla Language Processing (BLP) Workshop</span>. I have also served as a{" "}
-              <span className="font-semibold text-foreground">reviewer</span> for several IEEE and ACM conferences, contributing to the academic research community through peer review and professional service.
+              I graduated from <span className="font-semibold text-foreground">Sylhet Engineering College</span> with a strong foundation in <span className="font-semibold text-foreground">problem-solving and competitive programming</span>. Throughout my academic journey, I gained extensive experience in algorithm design, data structures, and technical mentoring. I actively contributed to the community by tutoring junior developers on data structures and algorithms, facilitating workshops, and organizing programming contests to foster growth and excellence.
             </p>
           </div>
         </div>
