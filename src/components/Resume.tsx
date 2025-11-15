@@ -148,22 +148,11 @@ const Resume = () => {
             </div>
             <h3 className="text-3xl font-bold text-foreground">Skills</h3>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-3 md:grid-cols-3 lg:grid-cols-4">
             {skills.map((skill, index) => (
               <Card key={index} className="hover-lift border-l-4 border-l-primary/30">
-                <CardContent className="pt-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-foreground font-semibold">{skill.name}</span>
-                    <Badge variant="secondary" className="font-bold">
-                      {skill.level}%
-                    </Badge>
-                  </div>
-                  <div className="w-full bg-secondary rounded-full h-2.5">
-                    <div
-                      className="bg-gradient-to-r from-primary to-primary/70 h-2.5 rounded-full transition-all duration-1000"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
+                <CardContent className="pt-4 pb-4">
+                  <span className="text-sm font-medium text-foreground">{skill.name}</span>
                 </CardContent>
               </Card>
             ))}
