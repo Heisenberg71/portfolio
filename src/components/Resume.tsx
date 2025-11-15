@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, GraduationCap, Database, Code2, Brain, Zap, Cloud, Sparkles, GitBranch, Boxes, FileText, BarChart3, Layers } from "lucide-react";
 import { FaPython, FaJava, FaHtml5, FaCss3Alt, FaDocker, FaGitAlt } from "react-icons/fa";
-import { SiMysql, SiPostgresql, SiMariadb, SiMongodb, SiRedis, SiSpringboot, SiApachekafka, SiGradle, SiJunit5, SiJenkins, SiC, SiCplusplus } from "react-icons/si";
+import { SiMysql, SiPostgresql, SiMariadb, SiMongodb, SiRedis, SiSpringboot, SiApachekafka, SiGradle, SiJunit5, SiJenkins, SiC, SiCplusplus, SiOpenai } from "react-icons/si";
 
 const Resume = () => {
   const workExperience = [
@@ -62,7 +62,7 @@ const Resume = () => {
     { name: "NLP", icon: Brain },
     { name: "Deep Learning", icon: Brain },
     { name: "LangChain", icon: Sparkles },
-    { name: "OpenAI APIs", icon: Cloud },
+    { name: "OpenAI APIs", icon: SiOpenai },
     
     // Tools & Technologies
     { name: "SpringBoot", icon: SiSpringboot },

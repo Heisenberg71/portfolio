@@ -1,29 +1,33 @@
 const Gallery = () => {
   const galleryImages = [
     {
-      url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
-      title: "Conference Presentation",
+      url: "src/components/photos/DSC00706.jpg",
+      title: "KONA CPS Inauguration Ceremony Event ",
     },
     {
-      url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop",
-      title: "Research Lab",
+      url: "src/components/photos/DSC00547.jpg",
+      title: "KONA CPS Inauguration Ceremony Prize Distribution",
     },
     {
-      url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
-      title: "Team Meeting",
+      url: "src/components/photos/original_1ad1b67e-de9f-4647-83d0-50fc2dc59254_PXL_20221008_090016473.jpg",
+      title: "ACM ICPC Dhaka Regional Contest 2022",
     },
     {
-      url: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=600&fit=crop",
-      title: "Workshop Session",
+      url: "src/components/photos/PXL_20221007_115846737.jpg",
+      title: "ACM ICPC Dhaka Regional Contest Friendly Chess Match",
     },
-    {
-      url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
-      title: "Collaboration",
-    },
-    {
-      url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
-      title: "Academic Event",
-    },
+    // {
+    //   url: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=600&fit=crop",
+    //   title: "Workshop Session",
+    // },
+    // {
+    //   url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
+    //   title: "Collaboration",
+    // },
+    // {
+    //   url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+    //   title: "Academic Event",
+    // },
   ];
 
   return (
@@ -44,6 +48,11 @@ const Gallery = () => {
                 src={image.url}
                 alt={image.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                onError={(e) => {
+                  console.error(`Failed to load image: ${image.title}`);
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4">

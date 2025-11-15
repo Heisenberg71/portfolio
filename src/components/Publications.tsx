@@ -5,54 +5,19 @@ import { ExternalLink } from "lucide-react";
 const Publications = () => {
   const publications = [
     {
-      title: "A GenAI System for Improved FAIR Independent Biological Database Integration",
-      authors: "SN Sakib, K Naha, SY Rubaiat, HM Jamil",
-      venue: "Journal of Data and Information Quality",
-      publisher: "ACM",
+      title: "Bangla Hate Speech Classification using Pretrained Language Models and Data Augmentation",
+      authors: "Samin Yasir",
+      venue: "Proceedings of the Second Workshop on Bangla Language Processing",
+      publisher: "AACL",
       url: "https://dl.acm.org/doi/10.1145/3770753",
-    },
-    {
-      title: "WriteAssist: A Personalized Generative AI System for Autonomous Authoring of Scholarly Literature Reviews",
-      authors: "K Naha, SY Rubaiat, SN Sakib, HM Jamil",
-      venue: "Proceedings of the 36th ACM Conference on Hypertext and Social Media",
-      publisher: "ACM",
-      url: "https://dl.acm.org/doi/full/10.1145/3720553.3746679",
-    },
-    {
-      title: "A FAIR Resource Recommender System for Smart Open Scientific Inquiries",
-      authors: "SN Sakib, SY Rubaiat, K Naha, HH Rahman, HM Jamil",
-      venue: "Journal of Applied Sciences 15 (15), 8334",
-      publisher: "MDPI",
-      url: "https://doi.org/10.3390/app15158334",
-    },
-    {
-      title: "Are Large Language Models Smart Enough for SQL Tutoring and Assessment?",
-      authors: "K Naha, S Rubaiat, H Jamil",
-      venue: "Proceedings of the 25th IEEE International Conference on Advanced Learning Technologies",
-      publisher: "IEEE",
-      url: "https://par.nsf.gov/biblio/10631964",
-    },
-    {
-      title: "Abstract Visual Scientific Workflow Design using VisFlow 2.0",
-      authors: "K Naha, HM Jamil",
-      venue: "Proceedings of the 37th ACM International Conference on Scalable Scientific Data Management",
-      publisher: "ACM",
-      url: "https://dl.acm.org/doi/full/10.1145/3733723.3733746",
-    },
-    {
-      title: "EcoManure: A Machine Learning Framework for Nitrogen Level Prediction and Classification of Sustainable Manure Waste Management",
-      authors: "K Naha, H Jamil",
-      venue: "Proceedings of the USDA Waste to Worth Conference, 2025",
-      publisher: "USDA",
-      url: "https://lpelc.org/ecomanure-a-machine-learning-framework-for-nitrogen-level-prediction-and-classification-of-sustainable-manure-waste-management/",
-    },
+    }
   ];
 
   return (
     <section id="publications" className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="section-title">Selected Publications</h2>
+          <h2 className="section-title">Publication</h2>
           <div className="title-underline"></div>
         </div>
 

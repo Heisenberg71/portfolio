@@ -6,9 +6,9 @@ import { SiGooglescholar } from "react-icons/si";
 const Hero = () => {
   const socialLinks = [
     { name: "GitHub", url: "https://github.com/Heisenberg71", icon: FaGithub },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/kallol-naha/", icon: FaLinkedin },
-    { name: "ResearchGate", url: "https://www.researchgate.net/profile/Kallol-Naha", icon: FaGraduationCap },
-    { name: "Google Scholar", url: "https://scholar.google.com/citations?user=nzL0EKoAAAAJ&hl=en", icon: SiGooglescholar },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/Heisenberg71/", icon: FaLinkedin },
+    // { name: "ResearchGate", url: "https://www.researchgate.net/profile/Kallol-Naha", icon: FaGraduationCap },
+    // { name: "Google Scholar", url: "https://scholar.google.com/citations?user=nzL0EKoAAAAJ&hl=en", icon: SiGooglescholar },
   ];
   return (
     <section id="about" className="min-h-screen flex items-center justify-center section-padding pt-32">
@@ -29,7 +29,7 @@ const Hero = () => {
               Samin Yasir
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-              Backend Engineer & Full-Stack Developer
+              Backend Engineer & NLP Researcher
             </p>
           </div>
 
@@ -43,10 +43,10 @@ const Hero = () => {
               <Mail className="w-4 h-4" />
               <span>saminyasir.cs@gmail.com</span>
             </a>
-            <a href="https://kallolnaha.me" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+            {/* <a href="https://kallolnaha.me" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
               <ExternalLink className="w-4 h-4" />
               <span>kallolnaha.me</span>
-            </a>
+            </a> */}
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
               <span>Dhaka, Bangladesh</span>
@@ -83,7 +83,7 @@ const Hero = () => {
               Previously, I worked at <span className="font-semibold text-foreground">Samsung R&D Institute, Bangladesh</span>, where I contributed to the <span className="font-semibold text-foreground">Samsung Galaxy Smart Watch notification module</span>. My responsibilities encompassed writing unit tests, performing manual device testing, and collaborating on innovative features. I successfully passed the <span className="font-semibold text-foreground">Professional Test</span>, a globally recognized intensive coding assessment for Samsung Engineers, and mentored teammates to excel in this challenging evaluation.
             </p>
             <p>
-              I graduated from <span className="font-semibold text-foreground">Sylhet Engineering College</span> with a strong foundation in <span className="font-semibold text-foreground">problem-solving and competitive programming</span>. Throughout my academic journey, I gained extensive experience in algorithm design, data structures, and technical mentoring. I actively contributed to the community by tutoring junior developers on data structures and algorithms, facilitating workshops, and organizing programming contests to foster growth and excellence.
+              I graduated from <span className="font-semibold text-foreground">Sylhet Engineering College</span>, affiliated with <span className="font-semibold text-foreground">Shahjalal University of Science and Technology</span>, with a strong foundation in <span className="font-semibold text-foreground">problem-solving and competitive programming</span>. Throughout my academic journey, I gained extensive experience in algorithm design, data structures, and technical mentoring. I actively contributed to the community by tutoring junior developers on data structures and algorithms, facilitating workshops, and organizing programming contests to foster growth and excellence.
             </p>
           </div>
         </div>
