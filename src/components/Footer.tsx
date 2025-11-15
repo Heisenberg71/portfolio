@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Github, url: "https://github.com/utpoln", label: "GitHub" },
-    { icon: Linkedin, url: "https://www.linkedin.com/in/kallol-naha-5a584631/", label: "LinkedIn" },
-    { icon: Mail, url: "mailto:naha7197@vandals.uidaho.edu", label: "Email" },
+    { icon: Github, url: "https://github.com/Heisenberg71", label: "GitHub" },
+    { icon: Linkedin, url: "https://www.linkedin.com/in/saminyasir007/", label: "LinkedIn" },
+    { icon: Mail, url: "mailto:saminyasir.cs@gmail.com", label: "Email" },
   ];
 
   return (
@@ -15,10 +15,10 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center md:text-left">
             <p className="text-sm font-medium text-foreground">
-              © {new Date().getFullYear()} Kallol Naha. All rights reserved.
+              © {new Date().getFullYear()} Samin Yasir. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground mt-1">
-              Ph.D. Candidate at University of Idaho | SmartDB Lab
+              Software Engineer & NLP Researcher
             </p>
           </div>
 
