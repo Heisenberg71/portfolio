@@ -7,25 +7,28 @@ import { SiMysql, SiPostgresql, SiMariadb, SiMongodb, SiRedis, SiSpringboot, SiA
 const Resume = () => {
   const workExperience = [
     {
-      period: "2024 - Current",
-      title: "Graduate Research Assistant",
-      organization: "University of Idaho, Moscow, Idaho, USA",
-      description:
-        "Focused on conducting cutting-edge research in bioinformatics and human-computer interaction, working closely with faculty and other researchers. Developed AI-driven tools for data integration and visualization using Python, R, SQL, and ReactJS. Collaborated on research publications, grant proposals, and experimental workflow optimization.",
+      period: "September, 2023 - Present",
+      title: "Software Engineer",
+      organization: "Kona Software Lab Ltd.",
+      description: [
+        "Engineered backend modules for a secure, high-performance, and scalable Card Issuance System for Debit, Credit, and Prepaid cards used by financial institutions using Java Spring Boot framework",
+        "Designed and implemented a Token Service Provider (TSP) adhering to MasterCard Specifications, ensuring secure payment token management through Test-Driven Development (TDD)",
+        "Contributed to making one of the least bug-reported systems by writing 35% of the test code for the whole system with intensive code reviews",
+        "Reduced deployment time by 30% through minimizing test suite execution time by smartly managing Spring Boot beans",
+        "Diminished authentication vulnerabilities by 40% through integrating Keycloak for Single Sign-On (SSO), streamlining authentication processes across multiple systems",
+        "Established database synchronization among components in microservices through Kafka Connectors",
+        "Implemented dynamic PDF and Excel report generation using JasperReports and Stored Procedures to handle large datasets efficiently, improving reporting capabilities and business insights delivery",
+      ],
     },
     {
-      period: "2021 - 2024",
-      title: "Graduate Teaching Assistant",
-      organization: "University of Idaho, Moscow, Idaho, USA",
-      description:
-        "Contributed to the academic environment by teaching Database Management Systems and C++ programming. Assisted in curriculum design, grading, and mentoring students. Utilized tools such as MySQL, PostgreSQL, Python, and Visual Studio to support lab exercises and hands-on projects.",
-    },
-    {
-      period: "2020 - 2021",
-      title: "Remote Full-Stack Developer",
-      organization: "Cover Whale Trucking Insurance, USA",
-      description:
-        "Developed and enhanced web-based insurance software solutions for commercial trucking. Built responsive user interfaces and robust backend systems using modern frameworks.",
+      period: "April, 2023 - September, 2023",
+      title: "Software Engineer",
+      organization: "Samsung R&D Institute Bangladesh (SRBD)",
+      description: [
+        "Worked on Samsung Galaxy Watch 6 Notifications using Android (Java)",
+        "Achieved top 4% Ranking globally in Samsung's prestigious Global Professional Test within just 6 months of joining, by efficiently solving a complex real-world engineering problem under stringent time constraints",
+        "Boosted a Five-Person team's Professional Test Passing Rate by 60% through targeted mentoring and preparation for the competitive exam",
+      ],
     },
   ];
 
@@ -105,7 +108,21 @@ const Resume = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed text-sm">{work.description}</p>
+                  <ul className="space-y-2">
+                    {Array.isArray(work.description) ? (
+                      work.description.map((point, idx) => (
+                        <li key={idx} className="text-muted-foreground text-sm flex gap-3">
+                          <span className="text-primary font-bold flex-shrink-0">•</span>
+                          <span>{point}</span>
+                        </li>
+                      ))
+                    ) : (
+                      <li className="text-muted-foreground text-sm flex gap-3">
+                        <span className="text-primary font-bold flex-shrink-0">•</span>
+                        <span>{work.description}</span>
+                      </li>
+                    )}
+                  </ul>
                 </CardContent>
               </Card>
             ))}
