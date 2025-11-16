@@ -17,7 +17,7 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-2xl hover-lift">
             <img
-              src="src/components/photos/samin-yasir-photo.jpeg"
+              src="src/components/photos/samin-yasir-photo-min.jpeg"
               alt="Profile"
               className="w-full h-full object-cover"
             />
