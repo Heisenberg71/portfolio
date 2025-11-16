@@ -1,19 +1,19 @@
 const Gallery = () => {
   const galleryImages = [
     {
-      url: "src/components/photos/DSC00706-min.jpg",
+      url: "/images/DSC00706-min.jpg",
       title: "KONA CPS Inauguration Ceremony Event ",
     },
     {
-      url: "src/components/photos/DSC00547-min.jpg",
+      url: "/images//DSC00547-min.jpg",
       title: "KONA CPS Inauguration Ceremony Prize Distribution",
     },
     {
-      url: "src/components/photos/original_1ad1b67e-de9f-4647-83d0-50fc2dc59254_PXL_20221008_090016473-min.jpg",
+      url: "/images/original_1ad1b67e-de9f-4647-83d0-50fc2dc59254_PXL_20221008_090016473-min.jpg",
       title: "ACM ICPC Dhaka Regional Contest 2022",
     },
     {
-      url: "src/components/photos/PXL_20221007_115846737-min.jpg",
+      url: "/images/PXL_20221007_115846737-min.jpg",
       title: "ACM ICPC Dhaka Regional Contest Friendly Chess Match",
     },
     // {
